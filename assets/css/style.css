@@ -1,0 +1,30 @@
+#taile>button {
+    margin: 0 5px;
+    border-radius: 25px;
+    border-color: #545454;
+    color: black;
+    width: inherit;
+    display: inline
+}
+
+.group-nav-principal>button {
+    border-color: #f6f6f6;
+    box-shadow: black;
+    border-radius: 15px;
+    color: black;
+    font-weight: bold;
+    display: inline;
+
+}
+
+.group-nav-principal {
+    display: contents;
+}
+
+
+body {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
