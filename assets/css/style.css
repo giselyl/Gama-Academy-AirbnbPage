@@ -1,30 +1,48 @@
-#taile>button {
-    margin: 0 5px;
-    border-radius: 25px;
-    border-color: #545454;
-    color: black;
-    width: inherit;
-    display: inline
+#taile > button {
+  margin: 0 5px;
+  border-radius: 25px;
+  color: black;
+  width: inherit;
+  display: inline;
+  border-color: #dbd6d6;
+}
+#taile {
+  display: contents;
 }
 
-.group-nav-principal>button {
-    border-color: #f6f6f6;
-    box-shadow: black;
-    border-radius: 15px;
-    color: black;
-    font-weight: bold;
-    display: inline;
-
+.group-nav-principal > button {
+  border-color: #f6f6f6;
+  border-radius: 15px;
+  color: black;
+  font-weight: bold;
 }
+/* .nav-principal * a:hover {
+  box-shadow: 1px 2px gray;
+  background-color: transparent;
+  color: black;
+} */
 
 .group-nav-principal {
-    display: contents;
+  display: contents;
 }
 
-
 body {
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: flex;
+}
+
+.pink-way {
+  color: #ff5757;
+}
+.nav-secondary * {
+  color: black;
+}
+.nav-secondary * a:hover {
+  color: black;
 }
