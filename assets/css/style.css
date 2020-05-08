@@ -45,4 +45,8 @@ body {
 }
 .nav-secondary * a:hover {
   color: black;
+  background-color: inherit;
+}
+h2 {
+  display: contents;
 }
