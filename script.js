@@ -26,12 +26,20 @@ function renderCard(card) {
     div.innerHTML = `
     <img src="${card.photo}" class = "card-img-top" alt=""/>
     <div class = "card-body">
+    ${card.property_type}
+    <br>
+    <br>
     <h5 class = "card-title">${card.name}</h5>
     <p class = "card-text">
-    ${card.property_type}
     </p>
+    <br>
+    4 hóspedes·2 quartos·3 camas·2 banheiros·Ar-Condicionado·Wifi·Cozinha·Piscina
+    <br>
+    <br>
+    <br>
+    <b>
     R$ ${card.price},00
-    </p>
+    </>/mês</p>
     </div>
     `;
     cardsContainer.appendChild(div);

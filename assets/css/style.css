@@ -1,4 +1,4 @@
-#taile > button {
+#taile>button {
   margin: 0 5px;
   border-radius: 25px;
   color: black;
@@ -6,16 +6,18 @@
   display: inline;
   border-color: #dbd6d6;
 }
+
 #taile {
   display: contents;
 }
 
-.group-nav-principal > button {
+.group-nav-principal>button {
   border-color: #f6f6f6;
   border-radius: 15px;
   color: black;
   font-weight: bold;
 }
+
 /* .nav-principal * a:hover {
   box-shadow: 1px 2px gray;
   background-color: transparent;
@@ -40,13 +42,24 @@ body {
 .pink-way {
   color: #ff5757;
 }
+
 .nav-secondary * {
   color: black;
 }
+
 .nav-secondary * a:hover {
   color: black;
   background-color: inherit;
 }
-h2 {
-  display: contents;
+
+.card-text {
+  width: 30rem;
+}
+
+. .btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #F7B432;
+  border-color: #F7B432;
 }
