@@ -1,4 +1,4 @@
-#taile>button {
+#taile > button {
   margin: 0 5px;
   border-radius: 25px;
   color: black;
@@ -7,11 +7,29 @@
   border-color: #dbd6d6;
 }
 
+.card-text {
+  color: rgb(113, 113, 113);
+}
+
+#card-price {
+  color: rgb(34, 34, 34) !important;
+  text-align: right !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+  line-height: 24px !important;
+}
+
+#card-price-value {
+  font-weight: 800 !important;
+}
+
 #taile {
   display: contents;
 }
 
-.group-nav-principal>button {
+.group-nav-principal > button {
   border-color: #f6f6f6;
   border-radius: 15px;
   color: black;
@@ -58,8 +76,8 @@ body {
 
 . .btn-primary:not(:disabled):not(.disabled).active,
 .btn-primary:not(:disabled):not(.disabled):active,
-.show>.btn-primary.dropdown-toggle {
+.show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #F7B432;
-  border-color: #F7B432;
+  background-color: #f7b432;
+  border-color: #f7b432;
 }
