@@ -25,20 +25,22 @@ function updateLocation() {
     map = new google.maps.Map(document.getElementById("googleMap"), {
         center: {
             lat: 0,
-            lng: 0
+            lng: 0,
         },
         zoom: 14,
     });
 
     geocoder.geocode({
-        address: city
-    }, function (results, status) {
-        if (status === "OK") {
-            map.setCenter(results[0].geometry.location);
-        } else {
-            alert("Geocode was not successful for the following reason: " + status);
+            address: city,
+        },
+        function (results, status) {
+            if (status === "OK") {
+                map.setCenter(results[0].geometry.location);
+            } else {
+                alert("Geocode was not successful for the following reason: " + status);
+            }
         }
-    });
+    );
 }
 
 function myMap() {
@@ -79,12 +81,13 @@ function renderCard(card) {
     }
 
     const div = document.createElement("div");
-    div.style.width = "20rem";
     div.style.margin = "2rem";
-    div.className = "cards";
+    div.className = "row cards";
     div.innerHTML = `
-    <img src="${card.photo}" class = "card-img-top" alt=""/>
-    <div class = "card-body">
+    <div class="col-md-6">
+        <img src="${card.photo}" class = "card-img-top" alt=""/>
+    </div>
+    <div class = "col-md-6 card-body ">
         <p class = "card-text">
             ${card.property_type}
         </p>
