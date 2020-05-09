@@ -36,12 +36,6 @@
   font-weight: bold;
 }
 
-/* .nav-principal * a:hover {
-  box-shadow: 1px 2px gray;
-  background-color: transparent;
-  color: black;
-} */
-
 .group-nav-principal {
   display: contents;
 }
@@ -74,10 +68,26 @@ body {
   width: 30rem;
 }
 
-. .btn-primary:not(:disabled):not(.disabled).active,
-.btn-primary:not(:disabled):not(.disabled):active,
-.show > .btn-primary.dropdown-toggle {
-  color: #fff;
-  background-color: #f7b432;
-  border-color: #f7b432;
+footer {
+  text-align: center;
+  width: 100%;
+  border-width: thin;
+  bottom: 0;
+  background-color: lightgray;
+}
+.logos {
+  justify-content: center;
+  display: inline-flex;
+  flex: 1;
+}
+#logo1 {
+  height: 180px;
+}
+.companyLogo {
+  flex: 1;
+  align-items: stretch;
+}
+
+footer img {
+  height: 50px;
 }
