@@ -44,8 +44,6 @@ body {
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
-  margin-bottom: 20px;
-  padding: 0% !important;
 }
 
 .cards {
@@ -65,10 +63,8 @@ body {
   background-color: inherit;
 }
 
-footer {
+.footer {
   text-align: center;
-  width: 100%;
-  border-width: thin;
   bottom: 0;
   background-color: lightgray;
 }
@@ -85,6 +81,42 @@ footer {
   align-items: stretch;
 }
 
-footer img {
+.footer img {
   height: 50px;
+}
+.btn-outline-secondary:hover {
+  background-color: transparent !important;
+  border-color: rgb(34, 34, 34) !important;
+}
+.btn-outline-secondary:focus {
+  box-shadow: 0 0 0 0.1rem #212529;
+  color: black !important;
+}
+input {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+  color: black;
+  font-weight: bold;
+}
+
+.btn-outline-secondary {
+  font-size: 90%;
+}
+
+#header {
+  background-color: white;
+  border-bottom: solid;
+  border-width: 0.15rem;
+  padding-bottom: 10px;
+  border-color: lightgrey;
+}
+
+.btn-outline-secondary:hover {
+  background-color: transparent !important;
+  border-color: rgb(34, 34, 34) !important;
+}
+
+.btn-outline-secondary:focus {
+  box-shadow: 0 0 0 0.1rem #212529;
 }

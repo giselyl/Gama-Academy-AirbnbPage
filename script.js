@@ -60,9 +60,7 @@ function renderCards(cards, page) {
     let i = 0;
     page = page - 1;
 
-    for (
-        i = page * PAGE_SIZE; i < cards.length && i < page * PAGE_SIZE + PAGE_SIZE; i++
-    )
+    for (i = page * PAGE_SIZE; i < cards.length && i < (page + 1) * PAGE_SIZE; i++)
         renderCard(cards[i], i);
 }
 
@@ -91,7 +89,7 @@ function renderCard(card) {
         <p class = "card-text">
             ${card.property_type}
         </p>
-        <h5 class = "card-title">${card.name}</h5>
+        <h6 class = "card-title">${card.name}</h6>
         <p class = "card-text">
             ${conveniences}
         </p>
@@ -114,4 +112,14 @@ async function navegatePage(page) {
     }
 }
 
+window.addEventListener("resize", calcBodyTopPadding);
+
+function calcBodyTopPadding() {
+    const header = document.getElementById("header");
+    const body = document.getElementsByTagName("body")[0];
+
+    body.style.paddingTop = header.offsetHeight + 5 + "px";
+}
+
 navegatePage(1);
+calcBodyTopPadding();
