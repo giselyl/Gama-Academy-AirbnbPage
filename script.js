@@ -4,84 +4,91 @@ let data = [];
 const periods = ["mês", "noite", "semana"];
 const qtd = ["", "2", "3", "4"];
 const options = [
-    "hóspedes",
-    "quartos",
-    "camas",
-    "banheiros",
-    "Ar-Condicionado",
-    "Wifi",
-    "Cozinha",
-    "Piscina",
-    "Aquecimento Central",
+  "hóspedes",
+  "quartos",
+  "camas",
+  "banheiros",
+  "Ar-Condicionado",
+  "Wifi",
+  "Cozinha",
+  "Piscina",
+  "Aquecimento Central",
 ];
 const PAGE_SIZE = 5;
 
 function updateLocation() {
-    const city = document.getElementById("city-name").value;
-    console.log("CITY = ", city);
+  const city = document.getElementById("city-name").value;
+  console.log("CITY = ", city);
 
-    var geocoder = new google.maps.Geocoder();
+  var geocoder = new google.maps.Geocoder();
 
-    map = new google.maps.Map(document.getElementById("googleMap"), {
-        center: {
-            lat: 0,
-            lng: 0,
-        },
-        zoom: 14,
-    });
+  map = new google.maps.Map(document.getElementById("googleMap"), {
+    center: {
+      lat: 0,
+      lng: 0,
+    },
+    zoom: 14,
+  });
 
-    geocoder.geocode({
-            address: city,
-        },
-        function (results, status) {
-            if (status === "OK") {
-                map.setCenter(results[0].geometry.location);
-            } else {
-                alert("Geocode was not successful for the following reason: " + status);
-            }
-        }
-    );
+  geocoder.geocode(
+    {
+      address: city,
+    },
+    function (results, status) {
+      if (status === "OK") {
+        map.setCenter(results[0].geometry.location);
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    }
+  );
 }
 
 function myMap() {
-    var mapProp = {
-        center: new google.maps.LatLng(-7.15, -34.873),
-        zoom: 14,
-    };
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+  var mapProp = {
+    center: new google.maps.LatLng(-7.15, -34.873),
+    zoom: 14,
+  };
+  var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
 
 async function fetchCards() {
-    return await fetch(apiQuartos).then(async (r) => await r.json());
+  return await fetch(apiQuartos).then(async (r) => await r.json());
 }
 
 function renderCards(cards, page) {
-    cardsContainer.innerHTML = "";
-    let i = 0;
-    page = page - 1;
+  cardsContainer.innerHTML = "";
+  let i = 0;
+  page = page - 1;
 
-    for (i = page * PAGE_SIZE; i < cards.length && i < (page + 1) * PAGE_SIZE; i++)
-        renderCard(cards[i], i);
+  for (
+    i = page * PAGE_SIZE;
+    i < cards.length && i < (page + 1) * PAGE_SIZE;
+    i++
+  )
+    renderCard(cards[i], i);
 }
 
 function renderCard(card) {
-    let conveniences = "";
-    let selected = [];
-    for (i = 0; i < 4; i++) {
-        if (i > 0) conveniences += " · ";
-        let pos;
-        do {
-            pos = Math.floor(Math.random() * options.length);
-        } while (selected.includes(pos));
-        selected.push(pos);
-        conveniences +=
-            qtd[Math.floor(Math.random() * qtd.length)] + " " + options[pos];
-    }
+  let conveniences = "";
+  let selected = [];
+  for (i = 0; i < 4; i++) {
+    if (i > 0) conveniences += " · ";
+    let pos;
+    do {
+      pos = Math.floor(Math.random() * options.length);
+    } while (selected.includes(pos));
+    selected.push(pos);
+    conveniences +=
+      qtd[Math.floor(Math.random() * qtd.length)] + " " + options[pos];
+  }
 
-    const div = document.createElement("div");
-    div.style.margin = "2rem";
-    div.className = "row cards";
-    div.innerHTML = `
+  const div = document.createElement("div");
+  div.style.marginTop = "2rem";
+  div.style.marginBottom = "2rem";
+  div.style.marginRight = "2rem";
+  div.className = "row cards";
+  div.innerHTML = `
     <div class="col-md-6">
         <img src="${card.photo}" class = "card-img-top" alt=""/>
     </div>
@@ -102,24 +109,41 @@ function renderCard(card) {
     </div>
     `;
 
-    cardsContainer.appendChild(div);
+  cardsContainer.appendChild(div);
 }
 async function navegatePage(page) {
-    data = await fetchCards();
-    if (data[0]) {
-        renderCards(data, page);
-        console.log(data);
-    }
+  data = await fetchCards();
+  if (data[0]) {
+    renderCards(data, page);
+    console.log(data);
+  }
 }
-
 window.addEventListener("resize", calcBodyTopPadding);
+window.addEventListener("resize", calcMapPosition);
 
 function calcBodyTopPadding() {
-    const header = document.getElementById("header");
-    const body = document.getElementsByTagName("body")[0];
+  const header = document.getElementById("header");
+  const body = document.getElementsByTagName("body")[0];
 
-    body.style.paddingTop = header.offsetHeight + 5 + "px";
+  body.style.paddingTop = header.offsetHeight + 5 + "px";
+}
+
+function calcMapPosition() {
+  const mapa = document.getElementById("mapa");
+  const preMapa = document.getElementById("preMapa");
+  const header = document.getElementById("header");
+
+  mapa.style.top = header.offsetHeight + "px";
+  mapa.style.left = preMapa.offsetWidth + "px";
 }
 
 navegatePage(1);
-calcBodyTopPadding();
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+    calcBodyTopPadding();
+    calcMapPosition();
+  },
+  false
+);

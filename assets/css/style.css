@@ -1,4 +1,4 @@
-#group-button > button {
+#group-button>button {
   margin: 0 5px;
   border-radius: 25px;
   color: black;
@@ -29,7 +29,7 @@
   display: contents;
 }
 
-.group-nav-principal > button {
+.group-nav-principal>button {
   border-color: #f6f6f6;
   border-radius: 15px;
   color: black;
@@ -67,15 +67,19 @@ body {
   text-align: center;
   bottom: 0;
   background-color: lightgray;
+  position: relative;
 }
+
 .logos {
   justify-content: center;
   display: inline-flex;
   flex: 1;
 }
+
 #logo1 {
   height: 180px;
 }
+
 .companyLogo {
   flex: 1;
   align-items: stretch;
@@ -84,14 +88,17 @@ body {
 .footer img {
   height: 50px;
 }
+
 .btn-outline-secondary:hover {
   background-color: transparent !important;
   border-color: rgb(34, 34, 34) !important;
 }
+
 .btn-outline-secondary:focus {
   box-shadow: 0 0 0 0.1rem #212529;
   color: black !important;
 }
+
 input {
   box-shadow: 0 0 0 0;
   border: 0 none;
@@ -119,4 +126,20 @@ input {
 
 .btn-outline-secondary:focus {
   box-shadow: 0 0 0 0.1rem #212529;
+}
+
+#alarm {
+  max-width: 95%;
+}
+
+#restricoes {
+  font-size: small;
+  margin: auto;
+}
+
+cards {
+  margin-top: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 0rem;
 }
